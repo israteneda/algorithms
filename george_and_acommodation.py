@@ -20,9 +20,10 @@ def solve():
     rooms = int(input())
     available_rooms = 0
     for _ in range(rooms):
-        p, q = input().split(' ')
+        p, q = [ int(num) for num in input().split(' ')]
         if p < q:
-            available_rooms += 1
+            if p + 2 <= q:
+                available_rooms += 1
     print(available_rooms)
 
 @patch('sys.stdout', new_callable=io.StringIO)
@@ -43,4 +44,7 @@ def test(mock_stdout):
             solve()
 
     assert  mock_stdout.getvalue() == '0\n2\n'
+
+if __name__ == '__main__':
+    solve()
     
