@@ -17,16 +17,17 @@ def solve():
 
     while matrix[2][2] != '1':
         for r, row in enumerate(matrix): 
-            for c, column in enumerate(row):
-                if column == '1':
-                    if c < 2:
-                        matrix[r][c], matrix[r][c + 1] = matrix[r][c + 1], matrix[r][c]
-                        moves += 1
-                    elif c > 2:
-                        matrix[r][c], matrix[r][c - 1] = matrix[r][c - 1], matrix[r][c]
-                        moves += 1
-
             if '1' in row:
+                
+                for c, column in enumerate(row):
+                    if column == '1':
+                        if c < 2:
+                            matrix[r][c], matrix[r][c + 1] = matrix[r][c + 1], matrix[r][c]
+                            moves += 1
+                        elif c > 2:
+                            matrix[r][c], matrix[r][c - 1] = matrix[r][c - 1], matrix[r][c]
+                            moves += 1
+
                 if r < 2:
                     matrix[r], matrix[r + 1] = matrix[r + 1], matrix[r]
                     moves += 1
