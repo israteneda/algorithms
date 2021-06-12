@@ -41,4 +41,4 @@ def find_numbers(nums: typing.List[int]) -> int:
 
 
 assert 1 == find_numbers([555,901,482,1771])
-assert 1 == find_numbers([12,345,2,6,7896])
+assert 2 == find_numbers([12,345,2,6,7896])
