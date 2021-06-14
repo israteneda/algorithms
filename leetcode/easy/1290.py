@@ -48,7 +48,7 @@ class ListNode:
 class Solution:
     def get_decimal_value(self, head: ListNode) -> int:
         num = 0
-        while head != None:
+        while head:
             num = num * 2 + head.val
             head = head.next
 
