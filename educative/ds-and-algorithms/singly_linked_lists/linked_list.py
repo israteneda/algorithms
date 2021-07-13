@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -80,6 +83,19 @@ class LinkedList:
             prev.next = cur_node.next
             cur_node = None
 
+    def len_iterative(self):
+        count = 0
+        cur_node = self.head
+        while cur_node:
+            count += 1
+            cur_node = cur_node.next
+        return count
+
+    def len_recursive(self, node):
+        if not node:
+            return 0
+        return 1 + self.len_recursive(node.next)
+
 
 llist = LinkedList()
 llist.append("A")
@@ -93,4 +109,6 @@ llist.delete_node("E")
 llist.insert_after_node(llist.head.next, "D")
 llist.delete_node_at_pos(1)
 
-llist.print_list()  
+llist.print_list()
+print(llist.len_iterative())
+print(llist.len_recursive(llist.head))
