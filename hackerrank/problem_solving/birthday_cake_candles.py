@@ -2,9 +2,10 @@
 https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 """
 import collections
+import typing
 
 
-def birthday_cake_candles(candles: str) -> int:
+def birthday_cake_candles(candles: typing.List[str]) -> int:
     num_map = collections.defaultdict(int)
     for num in candles:
         num_map[num] += 1
